@@ -15,9 +15,12 @@
     </label>
 
     <button type="submit">Sign Up</button> --}}
-<form class="row g-3 needs-validation" novalidate>
+<div>
+<form class="row g-4 needs-validation justify-content-center m-3" novalidate>
+  <h2 class="text-white">Sign Up</h2>
+  <img src="/images/blitz.png" alt="" style="width: 70vh">
   <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Username</label>
+    <label for="validationCustom01" class="form-label text-white">Username <i class="fi fi-rr-user"></i></label>
     <input type="text" class="form-control" id="validationCustom01" name="username" placeholder="Mark" required>
     <div class="valid-feedback">
       Looks good!
@@ -25,23 +28,23 @@
   </div>
 
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Password</label>
-    <input type="password" class="form-control" id="validationCustom02" placeholder="Otto" required>
+    <label for="validationCustom02" class="form-label text-white">Password <i class="fi fi-rr-key"></i></label>
+    <input type="password" class="form-control" id="validationCustom02" placeholder="You password goes here" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
 
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Confirm Password</label>
-    <input type="password" class="form-control" id="validationCustom02" placeholder="Otto" required>
+    <label for="validationCustom02" class="form-label text-white">Confirm Password</label>
+    <input type="password" class="form-control" id="validationCustom02" placeholder="Please confirm your pasword" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
 
   <div class="col-md-4">
-    <label for="validationCustomUsername" class="form-label">Email</label>
+    <label for="validationCustomUsername" class="form-label text-white">Email</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="inputGroupPrepend">@</span>
       <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
@@ -54,7 +57,7 @@
   <div class="col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
+      <label class="form-check-label text-white" for="invalidCheck">
         Agree to terms and conditions
       </label>
       <div class="invalid-feedback">
@@ -65,7 +68,7 @@
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
   </div>
-</form>
+
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>

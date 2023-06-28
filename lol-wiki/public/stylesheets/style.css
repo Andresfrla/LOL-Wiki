@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  
+    color: aliceblue;
+}
+
+.nav-link:hover {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#login-form button[type="submit"] {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+  #login-form img {
+    align-items: center;
+    height: 30vh;
+}
+
+#singup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  
+    color: aliceblue;
+}

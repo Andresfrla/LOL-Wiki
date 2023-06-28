@@ -1,29 +1,20 @@
+
+
 <div id="login-form">
   <h2>Log In</h2>
+  <img src="/images/yasuo.png" alt="">
   <form action="/auth/login" method="POST">
-
-    {{!-- <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label> --}}
-
+  
 <div class="mb-3">
-  <label for="formGroupExampleInput" class="form-label">Username</label>
+  <label for="formGroupExampleInput" class="form-label">Username <i class="fi fi-rr-user"></i></label>
   <input type="text" name="username" class="form-control" id="formGroupExampleInput" placeholder="Username123">
 </div>
 <div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">Password</label>
+  <label for="formGroupExampleInput2" class="form-label">Password <i class="fi fi-rr-key"></i></label>
   <input type="password" name="password" class="form-control" id="formGroupExampleInput2" placeholder="Your password goes here">
 </div>
 
-    <button type="submit">Log In</button>
+    <button type="submit" class="btn btn-primary">Log In</button>
 
 
     {{#if errorMessage}}

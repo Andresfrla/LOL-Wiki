@@ -16,9 +16,14 @@
 
     <button type="submit">Sign Up</button> --}}
 <div>
-<form class="row g-4 needs-validation justify-content-center m-3" novalidate>
+<div class="row">
+  <div class="col-6 d-flex justify-content-center">
+    <img src="/images/blitz.png" alt="" style="width: 70vh">
+  </div>
+  <div class="col-6 d-flex justify-content-center">
+<form class="row needs-validation m-3" novalidate>
   <h2 class="text-white">Sign Up</h2>
-  <img src="/images/blitz.png" alt="" style="width: 70vh">
+
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label text-white">Username <i class="fi fi-rr-user"></i></label>
     <input type="text" class="form-control" id="validationCustom01" name="username" placeholder="Mark" required>
@@ -37,7 +42,7 @@
 
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label text-white">Confirm Password</label>
-    <input type="password" class="form-control" id="validationCustom02" placeholder="Please confirm your pasword" required>
+    <input type="password" class="form-control" id="validationCustom02" placeholder="Please confirm your password" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -74,4 +79,6 @@
       <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
+  </div>
+</div>
 </div>

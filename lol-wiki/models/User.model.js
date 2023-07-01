@@ -1,56 +1,52 @@
-// const { Schema, model } = require("mongoose");
+// 2da Solución 
+// const mongoose = require('mongoose');
+// const bcrypt = require('bcrypt');
 
-// // TODO: Please make sure you edit the User model to whatever makes sense in this case
-// const userSchema = new Schema(
-//   {
-//     username: {
-//       type: String,
-//       trim: true,
-//       required: false,
-//       unique: true
-//     },
-//     email: {
-//       type: String,
-//       required: true,
-//       unique: true,
-//       lowercase: true,
-//       trim: true,
-//       //regla a aplica en este campo   , mensaje de error en caso de no cumplir
-//       match: [/^\S+@\S+\.\S+$/,       'Please use a valid email address.'],
-//     },
-//     password: {
-//       type: String,
-//       required: true
-//     },
-//     // role:{
-//     //   type:String,
-//     //   enum:['Admin', 'User'],
-//     //   default: 'User'
-//     // },
+// const userSchema = new mongoose.Schema({
+//   email: {
+//     type: String,
+//     required: true
 //   },
-//   {
-//     // this second object adds extra properties: `createdAt` and `updatedAt`    
-//     timestamps: true
+//   password: {
+//     type: String,
+//     required: true,
+//     minlength: 8,
+//     match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.,])[A-Za-z\d@$!%*?&.,]+$/,
+//     set: function(value) {
+//       const saltRounds = 10;
+//       const hashedPassword = bcrypt.hashSync(value, saltRounds);
+//       return hashedPassword;
+//     }
+//   },
+//   username: {
+//     type: String,
+//     required: true,
+//     minlength: 4
 //   }
-// );
+// });
 
-// const User = model("User", userSchema);
+// const User = mongoose.model('User', userSchema);
 
 // module.exports = User;
 
+// Solución 3, Funciona
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const Joi = require('joi');
 
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: true
+    required: [true, 'El campo email es obligatorio.']
   },
   password: {
     type: String,
-    required: true,
-    minlength: 8,
-    match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.,])[A-Za-z\d@$!%*?&.,]+$/,
+    required: [true, 'El campo password es obligatorio.'],
+    minlength: [8, 'La contraseña debe tener al menos 8 caracteres.'],
+    match: [
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.,])[A-Za-z\d@$!%*?&.,]+$/,
+      'La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial.'
+    ],
     set: function(value) {
       const saltRounds = 10;
       const hashedPassword = bcrypt.hashSync(value, saltRounds);
@@ -59,8 +55,8 @@ const userSchema = new mongoose.Schema({
   },
   username: {
     type: String,
-    required: true,
-    minlength: 4
+    required: [true, 'El campo username es obligatorio.'],
+    minlength: [4, 'El nombre de usuario debe tener al menos 4 caracteres.']
   }
 });
 

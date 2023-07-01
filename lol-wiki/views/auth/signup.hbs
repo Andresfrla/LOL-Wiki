@@ -15,13 +15,13 @@
     </label>
 
     <button type="submit">Sign Up</button> --}}
-<div>
+{{!-- <div>
 <div class="row">
   <div class="col-6 d-flex justify-content-center">
     <img src="/images/blitz.png" alt="" style="width: 70vh">
   </div>
   <div class="col-6 d-flex justify-content-center">
-<form class="row needs-validation m-3" action="/auth/signup" method="POST">
+  <form class="row needs-validation m-3" action="/auth/signup" method="POST">
   <h2 class="text-white">Sign Up</h2>
 
   <div class="col-md-4">
@@ -81,4 +81,71 @@
   </form>
   </div>
 </div>
+</div> --}}
+
+<div>
+  <div class="row">
+    <div class="col-6 d-flex justify-content-center">
+      <img src="/images/blitz.png" alt="" style="width: 70vh">
+    </div>
+    <div class="col-6 d-flex justify-content-center">
+      <form class="row needs-validation m-3" action="/auth/signup" method="POST">
+        <h2 class="text-white">Sign Up</h2>
+
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label text-white">Username <i class="fi fi-rr-user"></i></label>
+          <input type="text" class="form-control" id="validationCustom01" name="username" placeholder="Mark" required="required">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label text-white">Password <i class="fi fi-rr-key"></i></label>
+          <input type="password" class="form-control" id="validationCustom02" name="password" placeholder="Your password goes here" required="required">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom03" class="form-label text-white">Confirm Password</label>
+          <input type="password" class="form-control" id="validationCustom03" name="confirmPassword" placeholder="Please confirm your password" required="required">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label text-white">Email</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" name="email" aria-describedby="inputGroupPrepend" required="required">
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="required">
+            <label class="form-check-label text-white" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+
+        {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+    </div>
+  </div>
 </div>

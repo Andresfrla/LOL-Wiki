@@ -1,13 +1,34 @@
 const axios = require('axios');
-const BASE_URL = 'https://americas.api.riotgames.com/';
 const API_KEY = process.env.API_KEY;
-const lolService = axios.create({
-    baseURL: BASE_URL
+
+// info de los jugadores 
+const PLAYER_URL = 'https://la1.api.riotgames.com/';
+const lolPlayerService = axios.create({
+    baseURL: PLAYER_URL
 })
 
-function lolService(endpoint, searchParameter) {
-    const url = `${endpoint}/${searchParameter}?api_key=${API_KEY}`;
-    return lolService.get(url)
+// info del juego
+const GAME_SERVICE_URL = 'https://americas.api.riotgames.com/';
+const gameLOLService = axios.create({
+    baseURL: GAME_SERVICE_URL
+})
+
+function getLOLPlayerDataFromApi(endpoint) {
+    const url = `${endpoint}?api_key=${API_KEY}`;
+    return lolPlayerService.get(url)
 }
 
-module.exports = getLOLData;
+function getGameLOLDataFromApi(endpoint){
+    const url = `${endpoint}?api_key=${API_KEY}`;
+    return gameLOLService.get(url)
+} 
+
+function getChampionsData() {
+    return axios.get('http://ddragon.leagueoflegends.com/cdn/11.14.1/data/en_US/champion.json');
+}
+
+module.exports = {
+    getChampionsData,
+    getLOLPlayerDataFromApi,
+    getGameLOLDataFromApi
+};

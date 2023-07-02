@@ -1,14 +1,5 @@
 {{!-- <h1>{{appTitle}} </h1> --}}
 
-
-{{#each rows}}
-<div class="row mb-3">
-    {{#each columns}}
-    <div class="{{columnClass}}">
-        {{#each cards}}
-            {{> card}}
-        {{/each}}
-    </div>
-    {{/each}}
-</div>
+{{#each urls}}
+  <img src={{url}} alt="" class="m-4">
 {{/each}}

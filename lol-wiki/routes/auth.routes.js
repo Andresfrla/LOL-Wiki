@@ -22,7 +22,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, confirmPassword} = req.body;
 
   // Check that username, email, and password are provided
   if (username === "" || email === "" || password === "") {
@@ -32,6 +32,11 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
 
     return;
+  }
+  if(password !== confirmPassword){
+    return res.status(400).render("auth/signup", {
+      errorMessage: "Your password doesnt match.",
+    });
   }
 
   if (password.length < 6) {

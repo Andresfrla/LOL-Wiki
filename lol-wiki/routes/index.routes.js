@@ -1,8 +1,6 @@
 const express = require('express');
 const {
-  getChampionsData,
-  getLOLPlayerDataFromApi,
-  getGameLOLDataFromApi
+  getChampionsData
 } = require('../utils/lol-service'); 
 const router = express.Router();
 
@@ -15,19 +13,16 @@ router.get("/", async (req, res, next) => {
     const urls = []
     const names = []
 
-    console.log(champions)
     championsNames.forEach(p => {
       urls.push({
         url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${p}_0.jpg`
       })
-    })
-
-    champions.name.forEach(p => {
       names.push({
         name: `${p}`
       })
     })
-    res.render('index', {urls}, {names})
+
+    res.render('index', {urls, names})
   } catch (error) {
     console.error(error)
   }

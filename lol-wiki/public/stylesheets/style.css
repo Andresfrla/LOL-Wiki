@@ -30,11 +30,30 @@ body {
     height: 30vh;
 }
 
-#singup-form {
+#signup-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;  
     color: aliceblue;
+}
+
+.container-search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+
+#summoner-search img {
+    align-items: center;
+    height: 30vw;
+}
+
+#summoner-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

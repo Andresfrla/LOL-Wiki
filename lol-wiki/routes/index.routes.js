@@ -21,7 +21,7 @@ router.get("/", async (req, res, next) => {
         name: `${p}`
       })
     })
-
+    
     res.render('index', {urls, names})
   } catch (error) {
     console.error(error)

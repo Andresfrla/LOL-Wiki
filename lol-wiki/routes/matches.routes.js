@@ -17,10 +17,22 @@ router.get("/", async (req, res, next) => {
       const data = await getGameLOLDataFromApi(endpoint);
       console.log('data: ', data)
       res.render("matches/match-search", summonerName)
+      const matches = []
+      for (let i = 0; i < 5; i++) {
+
+        const endpoint = `/lol/match/v5/matches/${matchId}`; 
+        const { data: match } = await getGameLOLDataFromApi(endpoint);
+
+        console.log(JSON.stringify(match))
+/*         matches.push(match) */
+      }
+      res.render("matches/match-list", { matches })
     } catch (error) {
       console.error(error)
     }
   });
+
+// hacer un for
 
 router.post("/", async (req,res,next) => {
   try {

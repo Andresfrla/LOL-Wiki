@@ -1,12 +1,10 @@
-// user.model.js
-// 1 
-
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: [true, 'El campo email es obligatorio.']
+    required: [true, 'El campo email es obligatorio.'],
+    unique: true
   },
   password: {
     type: String,
@@ -20,7 +18,8 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, 'El campo username es obligatorio.'],
-    minlength: [4, 'El nombre de usuario debe tener al menos 4 caracteres.']
+    minlength: [4, 'El nombre de usuario debe tener al menos 4 caracteres.'],
+    unique: true
   }
 });
 

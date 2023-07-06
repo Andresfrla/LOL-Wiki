@@ -17,7 +17,7 @@ router.get("/", async (req, res, next) => {
       const data = await getGameLOLDataFromApi(endpoint);
       console.log('data: ', data)
       res.render("matches/match-search", summonerName)
-      const matches = []
+/*       const matches = [] */
       for (let i = 0; i < 5; i++) {
         const { data: match } = await getGameLOLDataFromApi(endpoint);
         const endpoint = `/lol/match/v5/matches/${match}`; 
@@ -27,9 +27,9 @@ router.get("/", async (req, res, next) => {
           urls.push({
             url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${p.championName}_0.jpg`
           })
-        });        
+        });    
+        res.render("matches/match-list", { match })    
       }
-      res.render("matches/match-list", { match })
     } catch (error) {
       console.error(error)
     }

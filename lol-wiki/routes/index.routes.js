@@ -1,11 +1,13 @@
 const express = require('express');
+const isLoggedIn = require('../middleware/isLoggedIn.js')
+// const isLoggedOut = require('../middleware/isLoggedOut.js')
 const {
   getChampionsData
 } = require('../utils/lol-service'); 
 const router = express.Router();
 
 /* GET champions*/
-router.get("/", async (req, res, next) => {
+router.get("/", isLoggedIn, async (req, res, next) => {
   try {
     const { data } = await getChampionsData();
 

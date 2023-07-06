@@ -27,10 +27,16 @@ router.get("/detail/:name", async (req, res, next) => {
     const { name } = req.params; 
     const { data } = await getChampionsData();
     const champion = data.data[name];
+
     console.log("champion", champion)
 
+    const championsDetail = {
+      name: name,
+      url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg`,
+      description: champion.blurb
+    }
 
-    res.render('champions/champDetail', champion)
+    res.render('champions/champDetail', championsDetail)
   } catch (error) {
     console.error(error)
   }

@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const {
+  getChampionsData
+} = require('../utils/lol-service'); 
 
 router.get("/", async (req, res, next) => {
   try {
@@ -14,6 +17,20 @@ router.get("/", async (req, res, next) => {
       })
     })
     res.render('index', {urls})
+  } catch (error) {
+    console.error(error)
+  }
+});
+
+router.get("/detail/:name", async (req, res, next) => {
+  try {
+    const { name } = req.params; 
+    const { data } = await getChampionsData();
+    const champion = data.data[name];
+    console.log("champion", champion)
+
+
+    res.render('champions/champDetail', champion)
   } catch (error) {
     console.error(error)
   }

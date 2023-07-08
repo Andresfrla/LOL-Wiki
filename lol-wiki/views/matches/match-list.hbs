@@ -1,1 +1,24 @@
-<h1>LISTO</h1>
+<div class="container">
+    {{#each matches}}
+    <div class="row">
+        <p class="text-white">{{matchId}}</p>
+        <div class="col">
+            {{#each teamOne}}
+                <p class="text-white">{{ name }}</p>
+                <img src="{{ url }}" alt=""> 
+            {{/each}}
+        </div>
+        <div class="col">
+            {{#each teamTwo}}
+                <p class="text-white">{{ name }}</p>
+                <img src="{{ url }}" alt="">
+            {{/each}}
+            {{!-- <form action=""></form> --}}
+        </div>
+    </div>
+{{/each}}
+</div>
+
+
+    
+

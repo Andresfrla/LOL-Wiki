@@ -27,6 +27,7 @@ function getChampionsData() {
     return axios.get('http://ddragon.leagueoflegends.com/cdn/11.14.1/data/en_US/champion.json');
 }
 
+
 module.exports = {
     getChampionsData,
     getLOLPlayerDataFromApi,

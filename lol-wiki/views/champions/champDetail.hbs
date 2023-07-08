@@ -1,4 +1,4 @@
-<h2>Champ name </h2>
+{{!-- <h2>Champ name </h2>
 
 <div class="card" style="width: 18rem;">
   <img src="{{url}}" class="card-img-top" alt="...">
@@ -14,4 +14,38 @@
   <button type="button" class="btn btn-outline-primary">E</button>
   <button type="button" class="btn btn-outline-primary">R</button>
   <button type="button" class="btn btn-outline-primary">Pasive </button>
+</div> --}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" style="width: 100%;">
+        <img src="{{url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{description}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex align-items-center">
+      <div class="button-container">
+        <div class="btn-group-vertical" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary btn-lg">
+            <img src="{{qImageUrl}}" alt="Q" class="button-icon">
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <img src="{{wImageUrl}}" alt="W" class="button-icon">
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            <img src="{{eImageUrl}}" alt="E" class="button-icon">
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            <img src="{{rImageUrl}}" alt="R" class="button-icon">
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            <img src="{{passiveImageUrl}}" alt="Passive" class="button-icon">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

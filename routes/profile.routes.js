@@ -14,13 +14,18 @@ const isLoggedIn = require('../middleware/isLoggedIn');
         console.log(team)
     }
 }) */
+router.get('/', isLoggedIn, async (req, res, next) => {
+    res.render("profile", {team}) 
+})
 
 router.post('/', async (req, res, next) => {
+    console.log('req.body: ', req.body)
     const newTeam = []
     for (const team of Object.keys(req.body)) {
         console.log(team)
+
     }
-    res.render("profile", {team}) 
+    res.redirect('/profile')
 })
 
 module.exports = router;

@@ -1,12 +1,17 @@
 <div class="container">
+    <h2 class="text-white">- Matches -</h2>
     {{#each matches}}
     <div class="row">
         <p class="text-white">Game ID: {{matchId}}</p>
         <div class="col">
-            <h1 class="text-white">Team One</h1><br/>
+            <h3 class="text-white">Team One</h3><br/>
             {{#each teamOne}}
             <form action="/profile" method="POST">
-                <h3 class="bg-green">{{summoner}}</h3>
+                <h4 class="bg-green">{{summoner}}</h4>
+                <input type="text" name="summoner" value="{{summoner}}" hidden> 
+                <input type="text" name="url" value="{{url}}" hidden> 
+                <input type="text" name="summoner" value="{{summoner}}" hidden> 
+                <input type="text" name="summoner" value="{{summoner}}" hidden> 
                 <p class="text-white">{{ name }}</p>
                 <img src="{{ url }}" alt="" style="width: 80px;"> 
                 <p class="text-white">KDA: {{kills}}/{{deaths}}/{{assists}}</p>
@@ -21,10 +26,10 @@
                 <button type="submit" class="btn btn-primary mb-3 m-4 row">Save Team <i class="fi fi-rs-disk"></i></button></form>
         </div>
         <div class="col">
-            <h1 class="text-white">Team Two</h1><br/>
+            <h3 class="text-white">Team Two</h3><br/>
             {{#each teamTwo}}
-            <form action="/profile">
-                <h3 class="bg-green">{{ summoner }}</h3>
+            <form action="/profile" method="POST">
+                <h4 class="bg-green">{{ summoner }}</h4>
                 <p class="text-white">{{ name }}</p>
                 <img src="{{ url }}" alt="" style="width: 80px;">
                 <p class="text-white">KDA: {{kills}}/{{deaths}}/{{assists}}</p>

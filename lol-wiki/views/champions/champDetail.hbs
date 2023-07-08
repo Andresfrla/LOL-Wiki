@@ -15,37 +15,72 @@
   <button type="button" class="btn btn-outline-primary">R</button>
   <button type="button" class="btn btn-outline-primary">Pasive </button>
 </div> --}}
-<div class="container">
+
+{{!-- Opción 1 --}}
+
+{{!-- Opción 2  Ganando --}} 
+
+{{!-- Opción 3 --}}
+
+
+{{!-- Opción 4 --}}
+
+{{!-- <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="card" style="width: 100%;">
-        <img src="{{url}}" class="card-img-top" alt="...">
+        <img src="{{championsDetail.url}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{name}}</h5>
-          <p class="card-text">{{description}}</p>
+          <h5 class="card-title">{{championsDetail.name}}</h5>
         </div>
       </div>
     </div>
-    <div class="col-md-6 d-flex align-items-center">
+    <div class="col-md-8">
       <div class="button-container">
         <div class="btn-group-vertical" role="group" aria-label="Basic outlined example">
+          {{#each skills}}
           <button type="button" class="btn btn-outline-primary btn-lg">
-            <img src="{{qImageUrl}}" alt="Q" class="button-icon">
+            <img src="https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/{{image}}" alt="Q" class="button-icon">
           </button>
-          <button type="button" class="btn btn-outline-primary btn-sm">
-            <img src="{{wImageUrl}}" alt="W" class="button-icon">
-          </button>
-          <button type="button" class="btn btn-outline-primary">
-            <img src="{{eImageUrl}}" alt="E" class="button-icon">
-          </button>
-          <button type="button" class="btn btn-outline-primary">
-            <img src="{{rImageUrl}}" alt="R" class="button-icon">
-          </button>
-          <button type="button" class="btn btn-outline-primary">
-            <img src="{{passiveImageUrl}}" alt="Passive" class="button-icon">
-          </button>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="width: 100%;">
+        <img src="{{championsDetail.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{championsDetail.name}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="button-container">
+        <div class="btn-group-vertical" role="group" aria-label="Basic outlined example">
+          {{#each skills}}
+          <div class="d-flex mb-4">
+            <button type="button" class="btn btn-outline-primary btn-lg btn-border" data-toggle="tooltip" data-placement="right" title="{{name}}">
+              <img src="https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/{{image}}" alt="{{name}}" class="button-icon">
+            </button>
+            <div class="card tooltip-card ml-2 bg-dark text-white border border-primary">
+              <div class="card-body">
+                <p class="card-text">{{description}}</p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

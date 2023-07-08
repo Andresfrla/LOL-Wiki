@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 
 const teamSchema = new mongoose.Schema({
-  champion: {
+  championName: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  url: {
     type: String,
     required: true,
     unique: true

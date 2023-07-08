@@ -5,6 +5,7 @@
         <div class="col">
             <h1 class="text-white">Team One</h1><br/>
             {{#each teamOne}}
+            <form action="/profile">
                 <h3 class="bg-green">{{summoner}}</h3>
                 <p class="text-white">{{ name }}</p>
                 <img src="{{ url }}" alt="" style="width: 80px;"> 
@@ -16,12 +17,13 @@
                 <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item4}}.png" width="22" alt="" height="22">
                 <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item5}}.png" width="22" alt="" height="22">
                 <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item6}}.png" width="22" alt="" height="22">
-
             {{/each}}
+                <button type="submit" class="btn btn-primary mb-3 m-4 row">Save Team <i class="fi fi-rs-disk"></i></button></form>
         </div>
         <div class="col">
             <h1 class="text-white">Team Two</h1><br/>
             {{#each teamTwo}}
+            <form action="/profile">
                 <h3 class="bg-green">{{ summoner }}</h3>
                 <p class="text-white">{{ name }}</p>
                 <img src="{{ url }}" alt="" style="width: 80px;">
@@ -34,7 +36,7 @@
                 <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item5}}.png" width="22" alt="" height="22">
                 <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item6}}.png" width="22" alt="" height="22">
             {{/each}}
-            {{!-- <form action=""></form> --}}
+                <button type="submit" class="btn btn-primary mb-4 m-4 row">Save Team <i class="fi fi-rs-disk"></i></button></form>
         </div>
     </div>
 {{/each}}

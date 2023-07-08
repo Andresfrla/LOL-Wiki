@@ -1,17 +1,38 @@
 <div class="container">
     {{#each matches}}
     <div class="row">
-        <p class="text-white">{{matchId}}</p>
+        <p class="text-white">Game ID: {{matchId}}</p>
         <div class="col">
+            <h1 class="text-white">Team One</h1><br/>
             {{#each teamOne}}
+                <h3 class="bg-green">{{summoner}}</h3>
                 <p class="text-white">{{ name }}</p>
-                <img src="{{ url }}" alt=""> 
+                <img src="{{ url }}" alt="" style="width: 80px;"> 
+                <p class="text-white">KDA: {{kills}}/{{deaths}}/{{assists}}</p>
+                <p class="text-white">Role: {{role}}</p>
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item1}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item2}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item3}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item4}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item5}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item6}}.png" width="22" alt="" height="22">
+
             {{/each}}
         </div>
         <div class="col">
+            <h1 class="text-white">Team Two</h1><br/>
             {{#each teamTwo}}
+                <h3 class="bg-green">{{ summoner }}</h3>
                 <p class="text-white">{{ name }}</p>
-                <img src="{{ url }}" alt="">
+                <img src="{{ url }}" alt="" style="width: 80px;">
+                <p class="text-white">KDA: {{kills}}/{{deaths}}/{{assists}}</p>
+                <p class="text-white">Role: {{role}}</p>
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item1}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item2}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item3}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item4}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item5}}.png" width="22" alt="" height="22">
+                <img src="http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{item6}}.png" width="22" alt="" height="22">
             {{/each}}
             {{!-- <form action=""></form> --}}
         </div>

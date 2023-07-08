@@ -1,6 +1,5 @@
 const express = require('express');
 const {
-  getChampionsData,
   getLOLPlayerDataFromApi,
   getGameLOLDataFromApi
 } = require('../utils/lol-service'); 
@@ -17,7 +16,6 @@ router.get("/", async (req, res, next) => {
 router.post("/match-search", async (req,res,next) => {
   try {
     const { summonerName } = req.body;
-    console.log("summonerName: ", summonerName);
     if (summonerName === ""){
       res.status(400).render("matches/match-search", {
         errorMessage:
@@ -40,14 +38,36 @@ router.post("/match-search", async (req,res,next) => {
 
       const teamOne = match.info.participants.slice(0,5).map(p => {
         return ({
-          url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${p.championName}_0.jpg`,
-          name: p.championName  
+          url: `http://ddragon.leagueoflegends.com/cdn/13.13.1/img/champion/${p.championName}.png`,
+          name: p.championName ,
+          summoner: p.summonerName,
+          kills: p.kills,
+          deaths : p.deaths,
+          assists : p.assists,
+          role : p.teamPosition,
+          item1 : p.item1,
+          item2 : p.item2,
+          item3 : p.item3,
+          item4 : p.item4,
+          item5 : p.item5,
+          item6 : p.item6,
         })
       })
       const teamTwo = match.info.participants.slice(5).map(p => {
         return ({
-          url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${p.championName}_0.jpg`,
-          name: p.championName  
+          url: `http://ddragon.leagueoflegends.com/cdn/13.13.1/img/champion/${p.championName}.png`,
+          name: p.championName,
+          summoner: p.summonerName,
+          kills: p.kills,
+          deaths : p.deaths,
+          assists : p.assists,
+          role : p.teamPosition,
+          item1 : p.item1,
+          item2 : p.item2,
+          item3 : p.item3,
+          item4 : p.item4,
+          item5 : p.item5,
+          item6 : p.item6,
         })
       })
 
@@ -58,7 +78,6 @@ router.post("/match-search", async (req,res,next) => {
       }
 
       matches.push(singleMatch)
-      console.log("matches: ", matches)
     }        
     res.render("matches/match-list", { matches })  
   } catch (error) {

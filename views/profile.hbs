@@ -1,0 +1,14 @@
+<h2>Saved Teams</h2>
+
+{{#each teams}}
+    <h3>Team Color: {{this.color}}</h3>
+    {{#each this.champions}}
+        {{this.championName}}
+        {{this.url}}
+        {{this.item1}}
+        {{this.item2}}
+        {{this.item3}}
+        {{this.item4}}
+        {{this.item5}}
+    {{/each}}
+{{/each}}

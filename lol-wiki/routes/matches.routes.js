@@ -19,20 +19,21 @@ router.get("/", async (req, res, next) => {
       res.render("matches/match-search", summonerName)
       const matches = []
       for (let i = 0; i < 5; i++) {
-
-        const endpoint = `/lol/match/v5/matches/${matchId}`; 
         const { data: match } = await getGameLOLDataFromApi(endpoint);
+        const endpoint = `/lol/match/v5/matches/${match}`; 
 
-        console.log(JSON.stringify(match))
-/*         matches.push(match) */
+        const urls = []
+        match.info.participants.forEach(p => {
+          urls.push({
+            url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${p.championName}_0.jpg`
+          })
+        });        
       }
-      res.render("matches/match-list", { matches })
+      res.render("matches/match-list", { match })
     } catch (error) {
       console.error(error)
     }
   });
-
-// hacer un for
 
 router.post("/", async (req,res,next) => {
   try {

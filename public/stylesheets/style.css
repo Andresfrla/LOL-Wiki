@@ -58,3 +58,6 @@ body {
     justify-content: center;
 }
 
+.bg-green {
+    color: #0e0585; /* Código de color verde personalizado */
+  }

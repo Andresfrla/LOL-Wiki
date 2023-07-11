@@ -56,25 +56,17 @@ router.post('/', isLoggedIn, async (req, res, next) => {
     } 
 
 
-    const otrafuncion = async (newTeam) => {
-        const championIdArr = newTeam.map(async newChampion => {
-            const result = await  
-            Champion.create(newChampion)
-            return result._id
+    const getSaveTeam = async (newTeam) => {
+        const championIdArr = newTeam.map(newChampion => {
+            return Champion.create(newChampion)
         })
-        return championIdArr
+            return Promise.all(championIdArr) 
     }
-
-    otrafuncion(newTeam).then(p => {
-        console.log('p: ', p)
-    })
-
-/*     championIdArr.forEach(async champId => {
-        doc.champions.push(champId)
-        await doc.save()
-    }) */
+    const saveTeam = await getSaveTeam(newTeam)
+    const updatedTeam = await Team.findByIdAndUpdate(newTeamSaved._id, { $push: { champions: saveTeam.map(champion => champion._id) } },{ new: true } )
     
-    console.log('newTeam: ', newTeam)
+    console.log('updatedTeam: ', updatedTeam)
+
     res.redirect(`/profile/${userId}`)
 })
 

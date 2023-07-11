@@ -51,6 +51,21 @@ module.exports = (app) => {
     favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
   );
 
+// app.use(
+//     session({
+//       secret: process.env.SESSION_SECRET || 'super hyper secret key',
+//       resave: false,
+//       saveUninitialized: false,
+//       store: MongoStore.create({
+//         mongoUrl: MONGO_URI,
+//       }),
+//       cookie: {
+//         maxAge: 60000, // 1 minuto en milisegundos
+//       },
+//     })
+//   );
+// }
+
   // ℹ️ Middleware that adds a "req.session" information and later to check that you are who you say you are 😅
   app.use(
     session({
@@ -62,4 +77,4 @@ module.exports = (app) => {
       }),
     })
   );
-};
+}

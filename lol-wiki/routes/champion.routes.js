@@ -45,11 +45,7 @@ router.get("/detail/:name", async (req, res, next) => {
       name: name,
       url: `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg`,
       description: champion.blurb,
-      // Q: spell.spell.name[0],
-      // W: spell.spell.name[1],
-      // E: spell.spell.name[2],
-      // R: spell.spell.name[3],
-      // Passive: champion.passive.name[0]
+
     }
 
     console.log(championsDetail)

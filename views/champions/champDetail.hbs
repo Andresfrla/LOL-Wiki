@@ -1,0 +1,63 @@
+{{!-- <h2>Champ name </h2>
+
+<div class="card" style="width: 18rem;">
+  <img src="{{url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5> <!-- Reemplazado "Título de la imagen" por {{name}} -->
+    <p class="card-text">{{description}} </p>
+  </div>
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+  <button type="button" class="btn btn-outline-primary">Q</button>
+  <button type="button" class="btn btn-outline-primary">W</button>
+  <button type="button" class="btn btn-outline-primary">E</button>
+  <button type="button" class="btn btn-outline-primary">R</button>
+  <button type="button" class="btn btn-outline-primary">Pasive </button>
+</div> --}}
+
+{{!-- Opción 1 --}}
+
+{{!-- Opción 2  Ganando --}} 
+
+{{!-- Opción 3 --}}
+
+
+{{!-- Opción 4 --}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="width: 100%;">
+        <img src="{{championsDetail.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{championsDetail.name}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="button-container">
+        <div class="btn-group-vertical" role="group" aria-label="Basic outlined example">
+          {{#each skills}}
+          <div class="d-flex mb-4">
+            <button type="button" class="btn btn-outline-primary btn-lg btn-border" data-toggle="tooltip" data-placement="right" title="{{name}}">
+              <img src="https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/{{image}}" alt="{{name}}" class="button-icon">
+            </button>
+            <div class="card tooltip-card ml-2 bg-dark text-white border border-primary">
+              <div class="card-body">
+                <p class="card-text">{{description}}</p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

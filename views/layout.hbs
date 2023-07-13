@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{appTitle}}</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
       <link rel="stylesheet" href="/stylesheets/style.css" />
       <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
       <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -21,15 +21,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link text-white m-3" aria-current="page" href="/auth/login">Login <i class="fi fi-rs-chalkboard-user"></i></a>
-        <a class="nav-link text-white m-3" href="/auth/logout">Logout <i class="fi fi-rs-chart-user"></i></a>
-        <a class="nav-link text-white m-3" href="/auth/signup">Signup <i class="fi fi-rr-edit"></i></a>
+        {{#if isLoggedIn}}
+        <a class="nav-link text-white m-3" href="/auth/logout">Logout<i class="fi fi-rs-chart-user"></i></a>
         <a class="nav-link text-white m-3" href="/">Champions</a>
         <a class="nav-link text-white m-3" href="#">Random Team <i class="fi fi-rr-users-alt"></i></a>
         <a class="nav-link text-white m-3" href="/matches">Match History</a>
+        {{else}}
+        <a class="nav-link text-white m-3" href="/auth/logout">Logout<i class="fi fi-rs-chart-user"></i></a>
+        <a class="nav-link text-white m-3" aria-current="page" href="/auth/login">Login<i class="fi fi-rs-chalkboard-user"></i></a>
+        <a class="nav-link text-white m-3" href="/auth/signup">Signup<i class="fi fi-rs-chart-user"></i></a>
+        {{!-- <a class="nav-link text-white m-3" href="#">Random Team <i class="fi fi-rr-users-alt"></i></a>
+        <a class="nav-link text-white m-3" href="/matches">Match History</a> --}}
+        {{/if}}
       </div>
     </div>
-  </div>
+
+  </div> 
 </nav>
 
     {{{body}}}

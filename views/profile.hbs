@@ -1,5 +1,5 @@
-<h2 class="text-white">Saved Teams</h2>
-
+{{!-- <h2 class="text-white">Saved Teams</h2>
+<div class="row"> 
 {{#each teams}}
 <div>
     <h4 class="text-white">Team</h4>
@@ -20,4 +20,80 @@
   </div>
     {{/each}}
 {{/each}}
+</div> --}}
+
+{{!-- 2 --}}
+{{!-- <div class="team-container">
+  {{#each teams}}
+  <div class="team-card">
+    <h4 class="text-white">Team</h4>
+    {{#each this.champions}}
+    <div class="card text-bg-dark mb-3 d-flex" style="max-width: 18rem;">
+      <div class="card-header">Champion</div>
+      <div class="card-body">
+        <div class="col">
+          <h5 class="card-title">{{this.championName}}</h5>
+          <img src="{{ this.url }}" alt="" style="width: 80px;" class="m-4">
+          <img src="{{#if item1}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item1}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item2}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item2}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item3}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item3}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item4}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item4}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item5}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item5}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/each}}
+</div> --}}
+
+{{!-- 3 --}}
+<div class="team-container"></div>
+{{!-- <div class="row">
+  {{#each teams}}
+  <div class="col">
+    <h4 class="text-white">Team</h4>
+    {{#each this.champions}}
+    <div class="card text-bg-dark mb-3 d-flex" style="max-width: 18rem;">
+      <div class="card-header">Champion</div>
+      <div class="card-body">
+        <div class="col">
+          <h5 class="card-title">{{this.championName}}</h5>
+          <img src="{{ this.url }}" alt="" style="width: 80px;" class="m-4">
+          <img src="{{#if item1}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item1}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item2}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item2}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item3}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item3}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item4}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item4}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item5}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item5}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/each}}
+</div> --}}
+
+
+<div class="row">
+  {{#each teams}}
+  <div class="col">
+    <h4 class="text-white">Team</h4>
+    {{#each this.champions}}
+    <div class="card text-bg-dark mb-3 d-flex" style="max-width: 18rem;">
+      <div class="card-header">Champion</div>
+      <div class="card-body">
+        <div class="col">
+          <h5 class="card-title">{{this.championName}}</h5>
+          <img src="{{ this.url }}" alt="" style="width: 80px;" class="m-4">
+          <img src="{{#if item1}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item1}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item2}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item2}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item3}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item3}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item4}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item4}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+          <img src="{{#if item5}}http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/{{this.item5}}.png{{else}}https://ddragon.leagueoflegends.com/cdn/13.13.1/img/spell/Summoner_UltBookPlaceholder.png{{/if}}" width="22" alt="" height="22">
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/each}}
 </div>

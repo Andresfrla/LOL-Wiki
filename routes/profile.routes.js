@@ -65,4 +65,11 @@ router.post('/', isLoggedIn, async (req, res, next) => {
     res.redirect(`/profile/${userId}`)
 })
 
+router.get('/:id/delete', isLoggedIn, (req,res) =>{
+    const { id } = req.params;
+    Team.findByIdAndDelete(id)
+    .then(() => res.redirect(`/profile/${userId}`))
+    .catch(err => res.render)
+}) 
+
 module.exports = router;

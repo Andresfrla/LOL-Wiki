@@ -36,7 +36,6 @@ router.post('/', isLoggedIn, async (req, res, next) => {
     })
     const doc = await Team.findById(newTeamSaved._id)
 
-    console.log('newTeamSaved: ', newTeamSaved)
     for(let i=0; i < 5; i++){
         const champion = {
             championName: championsNames[i],
@@ -59,10 +58,15 @@ router.post('/', isLoggedIn, async (req, res, next) => {
     }
     const saveTeam = await getSaveTeam(newTeam)
     const updatedTeam = await Team.findByIdAndUpdate(newTeamSaved._id, { $push: { champions: saveTeam.map(champion => champion._id) } },{ new: true } )
-    
-    console.log('updatedTeam: ', updatedTeam)
-
     res.redirect(`/profile/${userId}`)
 })
+
+router.get('/:id/delete', isLoggedIn, (req,res) =>{
+    const { _id : userId } = req.session.currentUser;
+    const { id } = req.params;
+    Team.findByIdAndDelete(id)
+    .then(() => res.redirect(`/profile/${userId}`))
+    .catch(err => res.render)
+}) 
 
 module.exports = router;
